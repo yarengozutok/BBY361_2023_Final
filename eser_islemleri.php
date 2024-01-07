@@ -12,9 +12,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="HU BBY361 Final Projesi">
+    <meta name="description" content="HU BBY361 VTYS Final Projesi">
     <meta name="author" content="Yaren Gozutok">
-    <title>BBY361 Eser İşlemleri - Bootstrap v5.2</title>
+    <title>BBY361 Eser İşlemleri</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sticky-footer-navbar/">
 
@@ -100,23 +100,23 @@
   </nav>
 </header>
 
-<!-- Sayfa İçerik Başlangıcı -->
+<<!-- Sayfa İçerik Başlangıcı -->
 <main class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-5">Eser İşlemleri</h1>
-        <p class="lead">Bu sayfada veri tabanında yer alan eserler ile ilgili işlemler yapabilir ya da yeni eser ekleyebilirsiniz.</p>
+    <h1 class="mt-5"> Eser İşlemleri</h1>
+    <p class="lead">Bu sayfada veri tabanında yer alan eserler ile ilgili işlemler yapabilir ya da yeni eser ekleyebilirsiniz.</p>
     <h2>Eser Ekle</h2>
-      <p><a href="eser_ekle.php">Yeni eser ekle!</a></p>
+    <p><a href="eser_ekle.php">Yeni eser ekle!</a></p>
+
     <h2>Eserleri güncelle ya da sil</h2>
-      <p><?php echo("Toplam kayıt sayısı: ".$toplam);?></p>
-      <p>
-          <?php
-          while($satir = mysqli_fetch_assoc($sorgu)){
-              printf("<p>".$satir['eserID']." - ".$satir['eserAdi']." (<a href='eser_guncelle.php?eserID=".$satir['eserID']."'>Güncelle</a>) "." (<a href='eser_sil.php?eserID=".$satir['eserID']."'>Sil</a>) ");
-          }
-          ?>
-      </p>
+    <p><?php echo("Toplam kayıt sayısı: ".$toplam);?></p>
+    <p>
+      <?php
+      while($satir = mysqli_fetch_assoc($sorgu)){
+          printf("<p>".$satir['eserID']." - ".$satir['eserAdi']." (<a href='eser_guncelle.php?eserID=".$satir['eserID']."'>Güncelle</a>) "." (<a href='eser_sil.php?eserID=".$satir['eserID']."'>Sil</a>) ");
+      }
+      ?>
+    </p>
   </div>
 </main>
-
 </html>

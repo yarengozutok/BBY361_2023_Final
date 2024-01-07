@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 07 Oca 2024, 20:24:14
+-- Üretim Zamanı: 07 Oca 2024, 22:32:47
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -30,6 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `eserler` (
   `eserID` int(11) NOT NULL,
   `eserAdi` text NOT NULL,
+  `eserYayinYili` int(11) NOT NULL,
+  `eserTürü` text NOT NULL,
   `yazarID` int(11) NOT NULL,
   `yayineviID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,12 +40,15 @@ CREATE TABLE `eserler` (
 -- Tablo döküm verisi `eserler`
 --
 
-INSERT INTO `eserler` (`eserID`, `eserAdi`, `yazarID`, `yayineviID`) VALUES
-(1, 'Tutunamayanlar', 1, 1),
-(2, 'Sinekli Bakkal', 2, 2),
-(3, 'Saatleri Ayarlama Enstitüsü', 3, 4),
-(4, 'Kürk Mantolu Madonna', 4, 3),
-(5, 'Anayurt Oteli', 5, 3);
+INSERT INTO `eserler` (`eserID`, `eserAdi`, `eserYayinYili`, `eserTürü`, `yazarID`, `yayineviID`) VALUES
+(1, 'Tutunamayanlar', 1972, 'Kurgu', 1, 1),
+(2, 'Sinekli Bakkal', 1935, 'Edebiyat', 2, 2),
+(3, 'Saatleri Ayarlama Enstitüsü', 1954, 'Edebi Kurgu', 3, 4),
+(4, 'Kürk Mantolu Madonna', 1943, 'Edebi Kurgu', 4, 3),
+(5, 'Anayurt Oteli', 1973, 'Psikolojik Kurgu', 5, 3),
+(6, 'İçimizdeki Şeytan', 1940, 'Kurgu', 4, 3),
+(7, 'Sırça Köşk', 1947, 'Epik Fantezi', 4, 3),
+(8, 'Eylembilim', 1998, 'Psikolojik Kurgu', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -110,6 +115,28 @@ ALTER TABLE `yayınevleri`
 --
 ALTER TABLE `yazarlar`
   ADD PRIMARY KEY (`yazarID`);
+
+--
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+--
+
+--
+-- Tablo için AUTO_INCREMENT değeri `eserler`
+--
+ALTER TABLE `eserler`
+  MODIFY `eserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `yayınevleri`
+--
+ALTER TABLE `yayınevleri`
+  MODIFY `yayineviID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `yazarlar`
+--
+ALTER TABLE `yazarlar`
+  MODIFY `yazarID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

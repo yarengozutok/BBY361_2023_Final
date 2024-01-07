@@ -12,9 +12,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="HU BBY361 Final Projesi">
+    <meta name="description" content="HU BBY361 VTYS Final Projesi">
     <meta name="author" content="Yaren Gozutok">
-    <title>BBY361 Eser Ekle - Bootstrap v5.2</title>
+    <title>BBY361 Kitap Ekle</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sticky-footer-navbar/">
 
@@ -104,12 +104,20 @@
 <main class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">Eser Güncelle</h1>
-        <p class="lead">Bu sayfada aşağıda yer alan formu kullanarak eseri güncelleyebilirsiniz!</p>
+        <p class="lead">Bu sayfada aşağıda yer alan formu kullanarak eserleri güncelleyebilirsiniz!</p>
     <h2>Eser Güncelleme Formu</h2>
         <form method="post" action="eser_guncelle2.php">
             <div class="mb-3">
                 <label for="formControl1" class="form-label">Eser Adı</label>
                 <input type="text" class="form-control" id="formControl1" name="eserAdi" value="<?php echo $satir["eserAdi"];?>">
+            </div>
+            <div class="mb-3">
+                <label for="formControl2" class="form-label">Eser Yayın Yılı</label>
+                <textarea class="form-control" id="formControl2" rows="3" name="eserYayinYili"><?php echo $satir["eserYayinYili"];?></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="formControl3" class="form-label">Eser Türü</label>
+                <input type="text" class="form-control" id="formControl3" name="eserTürü" value="<?php echo $satir["eserTürü"];?>">
             </div>
             <input type="hidden" value="<?php echo $satir["eserID"] ;?>" name="eserID">
             <button type="submit" class="btn btn-primary">Eser güncelle!</button>

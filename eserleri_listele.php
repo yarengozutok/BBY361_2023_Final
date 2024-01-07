@@ -111,6 +111,8 @@
           <?php
           while($satir = mysqli_fetch_assoc($sorgu)){
               printf("<h4>".$satir["eserAdi"]."</h4>");
+              printf("<b>Eser Yayın Yılı:</b> ".$satir["eserYayinYili"]."</br>");
+              printf("<b>Eser Türü:</b> ".$satir["eserTürü"]."</br>");
               printf("<b>Yazar Adı:</b> ".$satir["YZAdSoyad"]."</br>");
               printf("<b>Yayınevi:</b> ".$satir["yayineviAdi"]."</br>");
 
